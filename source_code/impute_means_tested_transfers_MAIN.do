@@ -25,7 +25,7 @@ capture log close
 
 // Uncomment the line below and enter the directory path where this .do file is saved.
 // global source_code_path "[insert directory path, without brackets]"
-global source_code_path "C:\Users\kevinp\Sandboxes\means_tested_transfers_imputations\source_code"
+
 /*
 ******************************************************************************************
 ** SET FOLDER STRUCTURE
@@ -33,8 +33,7 @@ global source_code_path "C:\Users\kevinp\Sandboxes\means_tested_transfers_imputa
 */
 
 cd $source_code_path
-//global input_path "..\inputs"
-global input_path "P:\CPS\ASEC\imputed_means_tested_transfers\input_data"
+global input_path "..\inputs"
 global output_data_path "..\outputs\data"
 global output_diagnostics_path "..\outputs\diagnostics"
 
