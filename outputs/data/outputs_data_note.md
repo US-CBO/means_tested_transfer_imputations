@@ -1,0 +1,1 @@
+The `/outputs/data` directory will be populated after the program has been executed.
