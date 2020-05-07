@@ -1,0 +1,2 @@
+# Exclude Stata data files
+*.dta
