@@ -5,11 +5,6 @@
 ** Purpose:    Produces a CSV file containing means, medians, and sums for CBO's
 **             means-tested transfer imputations.
 **
-** Programmer: Bilal Habib
-**
-** Date:       July 2018
-**             Updated May 2020
-**
 ** NOTE:       This script is called from within impute_means_tested_transfers_MAIN.do
 ******************************************************************************************
 */

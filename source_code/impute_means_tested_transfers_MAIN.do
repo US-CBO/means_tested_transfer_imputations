@@ -4,11 +4,6 @@
 **
 ** Purpose:    Master file to replicate the means-tested transfer imputations that CBO
 **             uses for its distributional analyses.
-**
-** Programmer: Bilal Habib
-**
-** Date:       July 2018
-**             Updated May 2020
 ******************************************************************************************
 */
 
@@ -38,7 +33,7 @@ global output_data_path "..\outputs\data"
 global output_diagnostics_path "..\outputs\diagnostics"
 
 global cps_start_year = 1980
-global cps_end_year = 2019
+global cps_end_year = 2020
 
 /*
 ******************************************************************************************

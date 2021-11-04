@@ -1,7 +1,7 @@
 # Contents of the Data Sets for CBO's Means-Tested Transfer Imputations
 
 ## Input Data Sets
-The `\inputs` subdirectory contains 40 separate data sets:
+The `\inputs` subdirectory contains 42 separate data sets:
 
 - `CBO_targets_means_tested_transfers.csv`
   This data set contains annual target values for the number of Medicaid and CHIP, SNAP,
@@ -21,10 +21,10 @@ The `\inputs` subdirectory contains 40 separate data sets:
   not impute additional recipient households beyond those that report receipt in the
   Census Bureau's Current Population Survey (CPS).
 
-  Target values are provided for **1979** through **2018**.
+  Target values are provided for **1979** through **2019**.
 
 - `CBO_probabilities_means_tested_transfers_[year].csv`
-  There are 39 microdata sets (one for each year of the analysis) based on the
+  There are 41 microdata sets (one for each year of the analysis) based on the
   files from the Annual Social and Economic Supplement (ASEC) of the CPS.
 
   Each row in a data set represents a person in a sampled household from the given
@@ -153,7 +153,7 @@ and person identifiers (`h_seq` and `pppos`, respectively).
 
 - The household and person identifiers in these files are consistent with the data and
   documentation released by the [Census Bureau](https://www.census.gov/data/datasets/time-series/demo/cps/cps-asec.html),
-  which provides CPS ASEC data sets from 1998 to 2019. For CPS ASEC data sets from 1980 to 1997,
+  which provides CPS ASEC data sets from 1998 to 2020. For CPS ASEC data sets from 1980 to 1997,
   see the CPS data page at [NBER (National Bureau of Economic Research)](http://www.nber.org/data/current-population-survey-data.html).
   The data sets in this package are also consistent with NBER's source code to process
   the CPS data for analysis in Stata, available [here](http://data.nber.org/data/cps_progs.html).
@@ -193,3 +193,6 @@ and person identifiers (`h_seq` and `pppos`, respectively).
   | **2014** | "traditional"                 |
   | **2018** | "production"                  |
 
+- For **CPS ASEC 2020**, the Census Bureau released an alternate set of weights to adjust for 
+  nonresponse during the coronavirus pandemic. CBO used those adjusted weights in its transfer
+  imputations. They can be found [here](https://www.census.gov/data/datasets/2020/demo/cps/2020-pub-use-adj-nonresp-corono-pandemic.html).

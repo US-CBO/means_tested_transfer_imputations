@@ -5,11 +5,6 @@
 ** Purpose:    Uses probabilites and random numbers from CBO's means-tested transfer
 **             imputation model to assign non-reporters in the CPS as transfer recipients.
 **
-** Programmer: Bilal Habib
-**
-** Date:       July 2018
-**             Updated May 2020
-**
 ** NOTE:       This script is called from within impute_means_tested_transfers_MAIN.do
 ******************************************************************************************
 */

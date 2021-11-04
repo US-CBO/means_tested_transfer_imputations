@@ -19,8 +19,8 @@ programs:
 * Supplemental Security Income (SSI), and
 * Federal housing assistance.
 
-The imputations can be merged with the CPS ASEC files from **1980** to **2019**. Those
-files represent information for calendar years **1979** to **2018**. See the section
+The imputations can be merged with the CPS ASEC files from **1980** to **2020**. Those
+files represent information for calendar years **1979** to **2019**. See the section
 called "Merging CBO's Means-Tested Transfer Imputations With CPS ASEC Data Sets" in the
 `docs\data_contents.md` file for more information on how to merge the outputs of this
 package with CPS ASEC data sets.
