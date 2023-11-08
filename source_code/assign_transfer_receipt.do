@@ -1,12 +1,11 @@
 /*
-******************************************************************************************
-** Program:    assign_transfer_receipt.do
+*****************************************************************************************
+** Assign transfer receipt to non-reporters in the CPS based on estimated probability
+** of transfer receipt and random numbers. Probability of transfer receipt for each
+** program are estimated in CBO's means-tested transfer imputation model.
 **
-** Purpose:    Uses probabilites and random numbers from CBO's means-tested transfer
-**             imputation model to assign non-reporters in the CPS as transfer recipients.
-**
-** NOTE:       This script is called from within impute_means_tested_transfers_MAIN.do
-******************************************************************************************
+** NOTE: This script is called from within impute_means_tested_transfers_MAIN.do
+*****************************************************************************************
 */
 
 local group `1'
@@ -75,6 +74,17 @@ while abs(`tot_`group'_impute' - ``group'_target') > `stopping_threshold' {
     local adj_factor = `adj_factor' / ((`tot_`group'_impute' - ///
       `tot_`group'_report') / (``group'_target' - `tot_`group'_report'))
 
+  // If the final imputed + reported total is not within one weighted household 
+  // of the target after 30 rounds of receipt allocation, increase the stopping 
+  // threshold by 25%.
+  if `i_loop' == 30 {
+	local i_loop = 0
+	local adj_factor = 1
+	local stopping_threshold = `stopping_threshold' * 1.25
+	local tot_`group'_impute = `tot_`group'_report'
+	capture drop `group'_impute_*
+  }
+	  
 }
 
 // If no imputation was necessary, set the imputed + reported series equal

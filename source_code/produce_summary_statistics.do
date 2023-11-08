@@ -1,17 +1,15 @@
 /*
 ******************************************************************************************
-** Program:    produce_summary_statistics.do
+** Produce a CSV file containing means, medians, and sums for CBO's means-tested 
+** transfer imputations.
 **
-** Purpose:    Produces a CSV file containing means, medians, and sums for CBO's
-**             means-tested transfer imputations.
-**
-** NOTE:       This script is called from within impute_means_tested_transfers_MAIN.do
+** NOTE: This script is called from within impute_means_tested_transfers_MAIN.do
 ******************************************************************************************
 */
 
-foreach year of numlist $cps_start_year / $cps_end_year {
+foreach cps_year of numlist $cps_start_year / $cps_end_year {
 
-  use "$output_data_path\CBO_imputed_means_tested_transfers_`year'.dta", clear
+  use "$output_data_path\CBO_imputed_means_tested_transfers_`cps_year'.dta", clear
 
     // Remove zeros so that means are calculated only for recipients.
     foreach program in mcaid snap ssi housing_assist {
@@ -21,7 +19,7 @@ foreach year of numlist $cps_start_year / $cps_end_year {
     // Produce a dataset with means, total recipients, total benefit dollars,
     // and medians for each year.
     #delimit ;
-    collapse (mean)   cps_year = year
+    collapse (mean)   cps_year = cps_year
                       mcaid_mean = mcaid_impute_val
                       snap_mean = snap_impute_val
                       ssi_mean = ssi_impute_val
@@ -46,16 +44,16 @@ foreach year of numlist $cps_start_year / $cps_end_year {
     #delimit cr
 
     // Save each year's dataset as a temporary file.
-    tempfile summary_`year'
-    save `summary_`year'', replace
+    tempfile summary_`cps_year'
+    save `summary_`cps_year'', replace
 
 }
 
 clear
 
 // Combine the temporary files and output as a csv.
-foreach year of numlist $cps_start_year / $cps_end_year {
-  append using `summary_`year''
+foreach cps_year of numlist $cps_start_year / $cps_end_year {
+  append using `summary_`cps_year''
 }
 
 format *mean *median %8.2f

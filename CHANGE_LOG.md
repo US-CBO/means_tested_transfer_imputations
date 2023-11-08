@@ -1,9 +1,15 @@
 # CHANGE_LOG
 
-## Version 0.3.0 - 2021-11-01
+## Version 0.4.0 - 2023-11-08
+* Added CPS ASEC data years 2021 and 2022
+* Switched the 2019 CPS ASEC file from COVID weights to 2020 Census weights
+* Updated recipient and benefit target values for Medicaid for 2012 through 2020
+* Updated benefit target values for Housing Assistance for 2020
+* Modified the algorithm's stopping threshold to adjust for nonconvergence
+
+## Version 0.3.0 - 2021-08-30
 * Added CPS ASEC data year 2020
-* Updated recipient and benefit target values for SNAP for 1979 through 2019 and for Medicaid for 2015 through 2019
-* Updated rounding rules for benefit amounts
+* Updated recipient and benefit target values for SNAP for 1979 through 2019
   
 ## Version 0.2.0 - 2020-05-08
 * Added CPS ASEC data years 2018 and 2019

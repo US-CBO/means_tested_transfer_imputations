@@ -43,6 +43,11 @@ cases in which there are more recipients in the CPS than in the administrative d
 assignment algorithm is applied, but receipt is removed from reporting units until
 the target is reached, instead of imputing receipt to nonreporting units.
 
+Note: in version 0.4.0 of the model, CBO added an additional adjustment to the stopping
+threshold to adjust for nonconvergence. In this adjustment, if the assignment loop has
+gone through 30 passes without the final imputed + reported total reaching one weighted
+household of the target, CBO increases the stopping threshold by 25%. 
+
 ## Imputed Means-Tested Transfer Benefit Amounts
 After receipt has been imputed to nonreporting units, the programs in this package apply
 CBO's estimated "potential" values to reporting and imputed units in the CPS. All imputed
